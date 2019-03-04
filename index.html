@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Home Page</title>
+    </head>
+<!-- ================================= -->
+    <body style="font-family: Arial">
+
+        <div id="info">
+          <h1>Applicant Profile</h1>
+            <p><b>Name :</b> {{ name }}</p>
+            <p><b>Age :</b> {{ age + ' Years' }}</p>
+            <p><b>Hobbies :</b> {{ hobbies[0] + ', ' + hobbies[1] + ', ' + hobbies[2] }}</p>
+            <p><b>You are</b> {{ isGraduated ? 'Graduated' : 'Student' }}</p>
+            <p><b>Duration :</b> {{ isGraduated ? jobs[0].duration : jobs[1].duration }}</p>
+            <p><b>Salary :</b> {{ isGraduated ? jobs[0].salary : jobs[1].salary }}</p>
+            <p><b>You are</b> {{ isGraduated ? 'Insured' : 'Not Insured' }}</p>
+            <ul>
+              <li v-for="(hobby, index) in hobbies">{{ index + 1 }} => {{ hobby }}</li>
+            </ul>
+            <ul>
+              <li v-for="(job, index) in jobs">{{ index + 1 }} => {{ job.duration }} <= {{ job.salary }}</li>
+            </ul>
+        </div>
+
+        <script src="js/vue.js"></script>
+        <script>
+            new Vue({
+                el: '#info',
+                data: {
+                    name: 'Mohamed Elsayed',
+                    age: 21,
+                    hobbies: ['Football','Gaming','Fitness'],
+                    isGraduated: true,
+                    jobs: [
+                      {
+                        duration: 'Full-Time',
+                        salary: '2500 - 3500',
+                        insured: true
+                      },
+                      {
+                        duration: 'Part-Time',
+                        salary: '1500 - 2500',
+                        insured: false
+                      }
+                    ]
+                }
+            })
+        </script>
+    </body>
+</html>
