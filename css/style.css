@@ -6,3 +6,13 @@
   height: auto;
   text-align: center;
 }
+
+li{
+  text-align: left;
+  display: inline-block;
+  margin: 20px
+}
+
+button{
+  padding: 10px
+}
