@@ -7,12 +7,13 @@
 <!-- ================================= -->
     <body style="font-family: Arial">
 
-        <div id="info">
+        <div id="info" :class="classs">
           <h1>{{name}}</h1>
           <ul>
             <li v-for="skill in skills">{{ skill }}</li>
           </ul>
-          <button @click="sayMyName('Aboelsayed')">Change My Name</button>
+          <button @click="chMyName('Aboelsayed')" @dblclick="reMyName('Mohamed')">Change My Name</button>
+          <button @click="reset" @dblclick="styled">Change Style</button>
         </div>
 
         <script src="js/vue.js"></script>
